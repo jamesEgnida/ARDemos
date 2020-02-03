@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>AR Card Builder</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+        integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dynamic AR Page Builder</h1>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Video name</label>
+                        <input type="text" class="form-control dataUpdater" id="video" aria-describedby="videolHelp"
+                            placeholder="somefile.mp4">
+                        <small id="videolHelp" class="form-text text-muted">File sshould be an MP4 you have already
+                            uploaded to the site.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Telephone</label>
+                        <input type="tel" class="form-control dataUpdater" id="tel" aria-describedby="telephoneHelp"
+                            placeholder="Enter telephone number">
+                        <small id="telephoneHelp" class="form-text text-muted">Your contact number</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control dataUpdater" id="email" aria-describedby="emailHelp"
+                            placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">yournmae@youraddress.com</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">LinkedIn address</label>
+                        <input type="url" class="form-control dataUpdater" id="linkedin" aria-describedby="linkedinHelp"
+                            placeholder="linkedin.com/yourid">
+                        <small id="linkedinHelp" class="form-text text-muted">Copy your LinkedIn profile URL</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Web address</label>
+                        <input type="url" class="form-control dataUpdater" id="web" aria-describedby="webHelp"
+                            placeholder="Enter web address" value="http://www.northerngasnetworks.co.uk/">
+                        <small id="webHelp" class="form-text text-muted">Your full web aaddress</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Facebook address</label>
+                        <input type="url" class="form-control dataUpdater" id="facebook" aria-describedby="facebookHelp"
+                            placeholder="https://facebook.com/yourid" value="https://facebook.com/northerngasnetworks">
+                        <small id="facebookHelp" class="form-text text-muted">Copy your Facebook profile URL</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Twitter address</label>
+                        <input type="url" class="form-control dataUpdater" id="twitter" aria-describedby="twitterHelp"
+                            placeholder="https://twitter.com/yourid" value="https://twitter.com/ngngas">
+                        <small id="twitterHelp" class="form-text text-muted">Copy your twitter profile URL</small>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Long URL</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="button-addon2" id="longURL" value="">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary longCopy" type="button" id="button-addon2"
+                                data-clipboard-target="#longURL" id="longCopy"><i class="far fa-copy"></i> Copy</button>
+                        </div>
+                    </div>
+                    <small id="longHelp" class="form-text text-muted">Copy this into a URL shortener such as <a
+                            href="https://bit.ly" target="_blank">bit.ly</a> then paste the resul below</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Short URL</label>
+                    <input type="url" class="form-control" id="shortURL" aria-describedby="shortHelp"
+                        placeholder="" value="">
+                    <small id="shorHelp" class="form-text text-muted">Paste a shortened URL here</small>
+                </div>
+                <div id="qrCode"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js" integrity="sha256-9MzwK2kJKBmsJFdccXoIDDtsbWFh8bjYK/C7UjB1Ay0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js" integrity="sha256-k77iqKeo6Og1Lf5mawux2rTxjaV9zUtyOWKVX3VttKE=" crossorigin="anonymous"></script>
+    <script>
+        const baseURL = "https://jamesegnida.github.io/ARDemos/?d=";
+        $('#longURL').val(baseURL);
+        var clipboard = new ClipboardJS('.longCopy');
+        clipboard.on('success', function (e) {
+            console.log(e);
+        });
+
+        clipboard.on('error', function (e) {
+            console.log(e);
+        });
+        var urlData = {};
+
+        function updateData(){
+            urlData = {
+                video: $('#video').val(),
+                tel: $('#tel').val(),
+                email: $('#email').val(),
+                linkedin: $('#linkedin').val(),
+                web: $('#web').val(),
+                facebook: $('#facebook').val(),
+                twitter: $('#twitter').val()
+            }
+            $('#longURL').val(btoa(JSON.stringify(urlData)));
+            $('#qrCode').empty();
+            $('#qrCode').qrcode({
+                width: $('#shortURL').width(),
+                height: $('#shortURL').width(),
+                text: $('#longURL').val()
+            })
+        }
+
+        $(".dataUpdater").on('keyup paste',function(){
+            updateData();
+        })
+
+        $('#shortURL').on('keyup paste', function(){
+            $('#qrCode').empty();
+            $('#qrCode').qrcode({
+                width: $('#shortURL').width(),
+                height: $('#shortURL').width(),
+                text: $('#shortURL').val()
+            })
+        })
+    </script>
+</body>
+
+</html>
