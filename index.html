@@ -63,7 +63,7 @@
                     <button type="button" class="btn btn-secondary animated" id="unmute"><i class="fas fa-volume-mute"></i></button>
                     <a href="https://twitter.com/ngngas" class="btn btn-dark" id="twitter-link"><i class="fab fa-twitter"></i></a>
                     <a href="https://facebook.com/northerngasnetworks" class="btn btn-dark" id="facebook-link"><i class="fab fa-facebook-f"></i></a>
-                    <!-- <a href="http://linkedin.com/in/steve-d-03a259153" class="btn btn-dark" id="linkedin-link"><i class="fab fa-linkedin-in"></i></a> -->
+                    <a href="http://linkedin.com/in/steve-d-03a259153" class="btn btn-dark" id="linkedin-link"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:SDacre@northerngas.co.uk" class="btn btn-dark" id="email-link"><i class="fas fa-envelope-square"></i></a>
                     <a href="tel:07778733867" class="btn btn-dark" id="phone-link"><i class="fas fa-phone"></i></a>
                     <a href="http://www.northerngasnetworks.co.uk" class="btn btn-dark" id="web-link"><i class="fas fa-globe"></i></a>
@@ -92,6 +92,11 @@
         $('#vid').attr('src', 'assets/videos/' + thisData.video);
         $('#twitter-link').attr('href', thisData.twitter);
         $('#facebook-link').attr('href', thisData.facebook);
+        if(thisData.linkedin){
+            $('#linkedin-link').attr('href', thisData.linkedin);
+        }else{
+            $('#linkedin-link').hide();
+        }
         $('#email-link').attr('href', "mailto:"+thisData.email);
         $('#phone-link').attr('href', "tel:"+thisData.tel);
         $('#web-link').attr('href', thisData.web);
