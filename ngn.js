@@ -34,6 +34,11 @@ $(document).arrive('#arjs-video', function () {
 AFRAME.registerComponent('vidhandler', {
     init: function () {
         this.toggle = false;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (aLoc) {
+              $.post('/recordLocation', {loc: aLoc})
+            })
+          };
     },
     tick: function (time) {
         if (marker.object3D.visible == true) {
@@ -126,3 +131,4 @@ setInterval(function () {
         $('#unmute').toggleClass('heartBeat');
     }
 }, 1500);  
+
