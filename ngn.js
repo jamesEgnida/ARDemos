@@ -36,7 +36,7 @@ AFRAME.registerComponent('vidhandler', {
         this.toggle = false;
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (aLoc) {
-              $.post('/recordLocation', {loc: aLoc})
+              $.post('/ar/recordLocation', {loc: aLoc})
             })
           };
     },
