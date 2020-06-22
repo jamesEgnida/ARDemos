@@ -29,8 +29,6 @@ videoCurrent.pause();
 $(document).arrive('#arjs-video', function () {
     setTimeout(function () {
         $('#loading').hide();
-        $('#bottomRow').addClass('slideInUp')
-        $('#topRow').addClass('slideInDown')
     }, 2000);
 });
 AFRAME.registerComponent('vidhandler', {
@@ -44,6 +42,8 @@ AFRAME.registerComponent('vidhandler', {
                 tickspeed = 0;
                 countDown--;
                 if(countDown <= 440) {
+                    $('#bottomRow').removeClass('hidden').addClass('slideInUp')
+                    $('#topRow').removeClass('hidden').addClass('slideInDown')
                     health--;
                     co++;
                     minutes = Math.floor(countDown / 60);
