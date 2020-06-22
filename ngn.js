@@ -41,27 +41,27 @@ AFRAME.registerComponent('vidhandler', {
             if (tickspeed == 90) {
                 tickspeed = 0;
                 countDown--;
-                if(countDown <= 440) {
+                if(countDown <= 455) {
                     $('#bottomRow').removeClass('hidden').addClass('slideInUp')
                     $('#topRow').removeClass('hidden').addClass('slideInDown')
                     health--;
                     co++;
                     minutes = Math.floor(countDown / 60);
                     seconds = countDown - minutes * 60;
-                    $('#time-remaining').html(minutes + ":"+ seconds);
+                    $('#time-remaining').html(('0'  + minutes).slice(-2)+':'+('0' + seconds).slice(-2));
                     $('#healthbar').width(((100 / 440) * health) + '%');
-                    if (health < 50) {
-                        $('#healthbar').removeClass('bg-primary').addClass('bg-warning').addClass('heartBeat');
+                    if (health < 300) {
+                        $('#healthbar').removeClass('bg-success').addClass('bg-warning').addClass('heartBeat');
                     }
-                    if (health < 49) {
+                    if (health < 180) {
                         $('#healthbar').removeClass('heartBeat')
                     }
-                    if (health < 25) {
+                    if (health < 60) {
                         $('#healthbar').removeClass('bg-warning').addClass('bg-danger').addClass('heartBeat');
                     }
                     doughnut.data.datasets = [{
                         data: [(440 - health), health],
-                        backgroundColor: ['#999', 'rgba(0,0,0,0']
+                        backgroundColor: [(health > 300 ? '#17a2b8' : (health > 180 ? '#ffc107' : '#dc3545')), 'rgba(0,0,0,0']
                     }]
                     doughnut.update();
                 }
