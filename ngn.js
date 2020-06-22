@@ -41,7 +41,7 @@ AFRAME.registerComponent('vidhandler', {
             if (tickspeed == 90) {
                 tickspeed = 0;
                 countDown--;
-                if(countDown <= 455) {
+                if(countDown <= 450) {
                     $('#bottomRow').removeClass('hidden').addClass('slideInUp')
                     $('#topRow').removeClass('hidden').addClass('slideInDown')
                     health--;
